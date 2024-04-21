@@ -1,6 +1,9 @@
 import json
 from nltk.stem.snowball import SnowballStemmer
+from nltk.util import ngrams
+from sklearn.feature_extraction.text import TfidfVectorizer
 import spacy
+
 
 # from deep_translator import GoogleTranslator
 
@@ -13,6 +16,7 @@ import spacy
 class TextProcessing:
     def __init__(self):
         self.m_stopWords = []
+        self.nlp = spacy.load('ro_core_news_sm')
 
     def readStopWords(self):
         with open('stop_words_romanian.json', 'r', encoding='utf-8') as file:
@@ -32,7 +36,30 @@ class TextProcessing:
         return stemmed_words
 
     def lemmaOfWords(self, query):
-        lemma = spacy.load('ro_core_news_sm')
+        lemma = self.nlp
         doc = lemma(query)
         lemmatized_words = [token.lemma_ for token in doc]
         return lemmatized_words
+
+    def nGrams(self, query):
+        unigram_list = list(ngrams(query.split(), 1))
+        bigram_list = list(ngrams(query.split(), 2))
+        return unigram_list, bigram_list
+
+    def partOfSpeech(self, query):
+        nlp = self.nlp
+        doc = nlp(query)
+        part_of_speech = [(token.text, token.pos_) for token in doc]
+        return part_of_speech
+
+    def dependencyParsing(self, query):
+        nlp = self.nlp
+        doc = nlp(query)
+        dependencies = [(token.text, token.dep_, token.head.text) for token in doc]
+        return dependencies
+
+    def keywordExtraction(self, query):
+        vectorizer = TfidfVectorizer(max_features=10)
+        matrix = vectorizer.fit_transform(query.split())
+        keywords = vectorizer.get_feature_names_out()
+        return keywords, matrix
