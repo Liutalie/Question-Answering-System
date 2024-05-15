@@ -1,0 +1,500 @@
+NUM:dist La ce distanţă este Aspen de la Denver?
+LOC:city În ce județ este Modesto , California ?
+HUM:desc Cine a fost Galileo?
+DESC:def Ce este un atom?
+NUM:date Când a devenit Hawaii un stat?
+NUM:dist Cât de înaltă este clădirea Sears?
+HUM:gr George Bush a cumpărat un mic interes în ce echipă de baseball?
+ENTY:plant Care este floarea națională a Australiei?
+DESC:reason De ce devine luna portocalie?
+DESC:def Ce este autismul?
+LOC:city Ce oraș a avut un târg mondial în 1900?
+HUM:ind Capul ce persoană este pe un ban?
+NUM:weight Care este greutatea medie a unui Labrador Galben?
+HUM:ind Cine a fost primul om care a zburat peste Oceanul Pacific?
+NUM:date Când a devenit Idaho un stat?
+NUM:other Care este speranța de viață pentru greieri?
+ENTY:substance Ce metal are cel mai mare punct de topire?
+HUM:ind Cine a dezvoltat vaccinul împotriva poliomielitei?
+DESC:def Ce este epilepsia?
+NUM:date În ce an s-a scufundat Titanicul?
+HUM:ind Cine a fost primul american care a pășit în spațiu?
+DESC:def Ce este o biosferă?
+LOC:other Ce râu din SUA este cunoscut sub numele de Big Muddy?
+DESC:def Ce este tulburarea bipolară?
+DESC:def Ce este colesterolul?
+HUM:ind Cine a dezvoltat computerul Macintosh?
+DESC:def Ce este cofeina?
+LOC:other Ce linie imaginară se află la jumătatea distanței dintre Polul Nord și Polul Sud?
+LOC:other Unde este aeroportul John Wayne?
+LOC:other În ce emisferă se află Filipine?
+NUM:speed Care este viteza medie a cailor la Kentucky Derby?
+LOC:mount Unde sunt Munții Stâncoși?
+DESC:def Ce sunt nevertebratele?
+NUM:temp Care este temperatura în centrul pământului?
+NUM:date Când a fost ales John F. Kennedy președinte?
+NUM:period Câți ani avea Elvis Presley când a murit?
+LOC:other Unde este râul Orinoco?
+NUM:dist Cât de departe este linia de serviciu de net în tenis?
+NUM:count Câte fibre ar trebui să consumi pe zi?
+NUM:count Câte Mari Lacuri sunt?
+ENTY:plant Din ce plantă este făcut materialul numit in?
+DESC:def Ce este teflonul?
+DESC:def Ce este amitriptilina?
+DESC:def Ce este un șaman?
+ENTY:animal Care este numele propriu pentru o femelă de morsă?
+ENTY:animal Cum se numește un grup de curcani?
+NUM:period Cât timp a dormit Rip Van Winkle?
+DESC:def Ce sunt trigliceridele?
+NUM:count Câți litri într-un galon?
+HUM:gr Cum se numește compania de ciocolată din San Francisco?
+DESC:def Ce sunt amfibienii?
+HUM:ind Cine a descoperit razele X?
+HUM:ind Linia de semnătură a carei comedian este `` Putem vorbi ''?
+DESC:def Ce este fibromialgia?
+DESC:desc Ce se face cu steagurile uzate sau învechite?
+DESC:def Ce înseamnă cc în motoare?
+NUM:date Când a murit Elvis Presley?
+LOC:city Care este capitala Iugoslaviei?
+LOC:city Unde este Milano?
+NUM:speed Care este viteza cu care zboară colibri?
+LOC:city Care este cel mai vechi oraș din Statele Unite?
+HUM:ind Ce a fost W.C. Numele real al câmpurilor?
+LOC:other Ce râu curge între Fargo, Dakota de Nord și Moorhead, Minnesota?
+ENTY:food Ce mănâncă liliecii?
+LOC:state În ce stare a avut loc bătălia de la Bighorn?
+HUM:desc Cine a fost Abraham Lincoln?
+ENTY:termeq Cum numești un cangur nou-născut?
+DESC:def Ce sunt venele de păianjen?
+NUM:date În ce zi și lună a murit John Lennon?
+LOC:other Ce strâmtoare desparte America de Nord de Asia?
+NUM:other Care este populația din Seattle?
+NUM:money Cât era un bilet pentru Titanic?
+LOC:city Care este cel mai mare oraș din lume?
+HUM:ind Ce compozitor american a scris muzica pentru „West Side Story”?
+LOC:other Unde este Mall of the America?
+DESC:def Care este scala pH-ului?
+ENTY:currency Ce tip de monedă este folosită în Australia?
+NUM:dist Cât de înalt este Arcul Gateway din St. Louis, MO?
+NUM:weight Cât de mult cântărește creierul unei femei adulte umane?
+HUM:ind Cine a fost primul guvernator al Alaska?
+DESC:def Ce este o prismă?
+NUM:date Când a fost primul transplant de ficat?
+HUM:ind Cine a fost ales președinte al Africii de Sud în 1994?
+NUM:other Care este populația Chinei?
+NUM:date Când s-a născut Rosa Parks?
+DESC:reason De ce este de ajutor o gărgăriță?
+DESC:def Ce este amoxicilina?
+HUM:ind Cine a fost prima femeie reprezentant al Statelor Unite?
+DESC:def Ce sunt xerofitele?
+LOC:country Din ce țară a venit Ponce de Leon?
+ENTY:event Departamentul de Trezorerie al SUA a emis pentru prima dată monedă de hârtie pentru SUA în timpul cărui război?
+DESC:def Ce este desktop publishing?
+NUM:temp Care este temperatura suprafeței soarelui?
+NUM:date În ce an a aderat Canada la Națiunile Unite?
+HUM:gr Care este cea mai veche universitate din SUA?
+LOC:other Unde este Insula Prințului Eduard?
+NUM:date Mercur, în ce an a fost descoperit?
+DESC:def Ce este criogenia?
+DESC:def Ce sunt recifele de corali?
+ENTY:other Care este cea mai lungă serie de câștiguri în ligii majore de baseball?
+DESC:def Ce este neurologia?
+HUM:ind Cine a inventat calculatorul?
+DESC:manner Cum măsurați cutremurele?
+HUM:desc Cine este Duke Ellington?
+LOC:city În ce județ este Phoenix, AZ?
+DESC:def Ce este un micron?
+NUM:temp Miezul soarelui, care este temperatura?
+ENTY:animal Ce este pasărea statului Ohio?
+NUM:date Când s-au născut gemenii lui William Shakespeare?
+LOC:other Care este cel mai înalt baraj din SUA?
+ENTY:color Ce culoare are o broasca sageata otravitoare?
+DESC:def Ce este acupunctura?
+NUM:dist Care este lungimea liniei de coastă a statului Alaska?
+HUM:ind Cum se numește soția lui Neil Armstrong?
+ENTY:plant Care este floarea statului Hawaii?
+HUM:ind Cine a câștigat doamna American în 1989?
+NUM:date Când s-a prăbușit Hindenberg?
+ENTY:substance Ce mineral ajută la prevenirea osteoporozei?
+NUM:date Care a fost ultimul an în care Chicago Cubs a câștigat World Series?
+LOC:other Unde este Perth?
+NUM:date În ce an a început al Doilea Război Mondial?
+NUM:dist Care este diametrul unei mingi de golf?
+DESC:def Ce este o eclipsă?
+HUM:ind Cine a descoperit America ?
+NUM:dist Care este diametrul pământului?
+HUM:ind Care președinte a fost necăsătorit?
+NUM:dist Cât de largă este galaxia Calea Lactee?
+NUM:date În ce sezon au loc cele mai multe furtuni?
+DESC:def Ce este Wimbledon?
+NUM:period Care este perioada de gestație pentru o pisică?
+NUM:dist Cât de departe este o milă nautică?
+HUM:ind Cine a fost aboliționistul care a condus raidul pe Harper's Ferry în 1859?
+DESC:def Ce înseamnă ritmul cardiac țintă?
+ENTY:product Care a fost primul satelit care a mers în spațiu?
+DESC:def Ce este executarea silite?
+ENTY:other Care este linia de falie majoră din apropiere de Kentucky?
+LOC:other Unde este tunelul Olanda?
+HUM:ind Cine a scris imnul `` Amazing Grace ''?
+HUM:title Ce poziție a jucat Willie Davis în baseball?
+DESC:def Ce sunt trombocitele?
+DESC:def Ce este indemnizația de concediere?
+ENTY:animal Cum se numește câinele lui Roy Roger?
+LOC:other Unde sunt Arhivele Nationale?
+ENTY:animal Cum se numeste pui de curcan?
+DESC:def Ce este poliomielita?
+ENTY:body Care este cel mai lung os din corpul uman?
+HUM:ind Cine este un filozof german?
+ENTY:veh Care au fost cele trei nave ale lui Cristofor Columb?
+DESC:def Ce înseamnă Phi Beta Kappa?
+DESC:def Ce este nicotina?
+ENTY:termeq Care este alt nume pentru vitamina B1?
+HUM:ind Cine a descoperit radiul?
+DESC:def Ce sunt petele solare?
+NUM:date Când a fost colonizată Algeria?
+HUM:gr Ce echipă de baseball a fost prima care a făcut numerele parte din uniformă?
+LOC:other Pe ce continent se afla Egiptul?
+LOC:city Care este capitala Mongoliei?
+DESC:def Ce este nanotehnologia?
+LOC:other La sfârșitul anilor 1700, condamnații britanici au fost folosiți pentru a popula ce colonie?
+LOC:state Ce stat este centrul geografic al celor 48 de state inferioare?
+DESC:def Ce este un unghi obtuz?
+DESC:def Ce sunt polimerii?
+NUM:date Când este sezonul uraganelor în Caraibe?
+LOC:other Unde este vulcanul Mauna Loa?
+ENTY:termeq Care este un alt termen astronomic pentru aurora nordică?
+LOC:other Din ce peninsulă face parte Spania?
+NUM:date Când s-a născut Lyndon B. Johnson?
+DESC:def Ce este acetaminofenul?
+LOC:state Ce stat are cea mai mică cantitate de ploaie pe an?
+HUM:ind Cine a fondat Crucea Roșie Americană?
+NUM:date În ce an au devenit Bravii din Milwaukee Bravii din Atlanta?
+NUM:speed Cât de repede se absoarbe alcoolul?
+NUM:date Când este solstițiul de vară?
+DESC:def Ce este supernova?
+LOC:other Unde este pădurea națională Shawnee?
+LOC:state Care este motto-ul statului american „Trăiește liber sau mori”?
+LOC:other Unde este Lourve?
+NUM:date Când a fost emis primul timbru?
+ENTY:color Ce culori primare amesteci pentru a face portocaliu?
+NUM:dist Cât de departe este Pluto de soare?
+LOC:other În ce corp de apă se află Insulele Canare?
+DESC:def Ce este neuropatia?
+LOC:other Unde este râul Eufrat?
+DESC:def Ce este criptografia?
+ENTY:substance Din ce este compus gazul natural?
+HUM:ind Cine este prim-ministrul Canadei?
+HUM:ind Ce conducător francez a fost învins în bătălia de la Waterloo?
+DESC:def Ce este leucemia?
+LOC:other Unde a murit Howard Hughes?
+ENTY:substance Care este piatra de naștere pentru iunie?
+ENTY:other Care este taxa pe vânzări în Minnesota?
+NUM:dist Care este distanța în mile de la pământ la soare?
+NUM:period Care este durata medie de viață a unui pui?
+NUM:date Când a fost deschis primul magazin Wal-Mart?
+DESC:def Ce este umiditatea relativa?
+LOC:city Ce oraș are codul zip 35824?
+ENTY:currency Ce monedă este folosită în Algeria?
+HUM:ind Cine a inventat hula hoop?
+ENTY:product Care a fost cea mai populară jucărie în 1957?
+ENTY:substance Din ce este făcută pastrama?
+ENTY:product Cum se numește satelitul pe care Uniunea Sovietică l-a trimis în spațiu în 1957?
+LOC:city Ziarul din ce oraș se numește „The Enquirer”?
+HUM:ind Cine a inventat slinky-ul?
+ENTY:animal Cum se numesc animalele care nu au coloană vertebrală?
+NUM:other Care este punctul de topire al cuprului?
+LOC:other Unde se află vulcanul Olympus Mons?
+HUM:ind Cine a fost al 23-lea președinte al Statelor Unite?
+NUM:temp Care este temperatura medie a corpului?
+DESC:desc Ce face un defibrilator?
+DESC:desc Care este efectul ploii acide?
+NUM:date În ce an au abolit Statele Unite proiectul?
+NUM:speed Cât de rapidă este viteza luminii?
+LOC:state În ce provincie este Montreal?
+LOC:other Ce structură a orașului New York este cunoscută și sub numele de Turnurile Gemene?
+DESC:def Ce este ciuperca?
+ENTY:lang Care este limba cel mai des vorbită în Țările de Jos?
+DESC:def Ce este clorura de sodiu?
+ENTY:termeq Cum se numesc spoturile de pe domino?
+NUM:count Câte lire într-o tonă?
+DESC:def Ce este gripa?
+DESC:def Ce este epuizarea stratului de ozon?
+NUM:date În ce an a fost pictată Mona Lisa?
+DESC:def Ce înseamnă „Sitting Shiva”?
+ENTY:other Care este puterea electrică în Madrid, Spania?
+LOC:mount Ce lanț muntos din America de Nord se întinde din Maine până în Georgia?
+ENTY:substance Din ce este fabricat plasticul?
+NUM:other Care este populația Nigeria?
+DESC:desc Ce face splina ta?
+LOC:other Unde este Marele Canion?
+HUM:ind Cine a inventat telefonul ?
+NUM:date În ce an au cumpărat SUA Alaska?
+HUM:ind Cum îl cheamă liderul Irlandei?
+DESC:def Ce este fenilalanina?
+NUM:count Câți galoane de apă sunt într-un picior cub?
+ENTY:other Care sunt cele două camere ale Legislativului?
+DESC:def Ce este sonarul?
+LOC:other În Polonia, unde locuiesc cei mai mulți oameni?
+DESC:def Ce este fosforul?
+LOC:other Care este locația Mării Linistei?
+NUM:speed Cât de rapid este sunetul?
+LOC:state În ce provincie franceză se produce coniacul?
+DESC:def Ce este Ziua Îndrăgostiților?
+DESC:reason Ce cauzează părul gri?
+DESC:def Ce este hipertensiunea arterială?
+DESC:def Ce este lățimea de bandă?
+LOC:other Care este cel mai lung pod suspendat din SUA?
+DESC:def Ce este un parazit?
+DESC:def Ce este capitalul propriu?
+DESC:desc Ce fac meteorologii?
+ENTY:other Care este criteriul pentru a fi orb din punct de vedere legal?
+HUM:ind Cine este cel mai înalt om din lume?
+LOC:city Care sunt orașele gemene?
+ENTY:other Ce au inventat Edward Binney și Howard Smith în 1903?
+ENTY:substance Din ce este făcută statuia libertății?
+DESC:def Ce este pilates?
+LOC:other Ce planetă este cunoscută drept planeta „roșie”?
+NUM:dist Care este adâncimea râului Nil?
+ENTY:termeq Cum se numește rochia tradițională coreeană colorată?
+DESC:def Ce este Mardi Gras?
+NUM:money Ce valorează pesos mexicani în dolari americani?
+HUM:ind Cine a fost primul afro-american care a jucat pentru Brooklyn Dodgers?
+HUM:ind Cine a fost primul prim-ministru al Canadei?
+NUM:count Câți amirali sunt în Marina SUA?
+ENTY:instru La ce instrument cânta Glenn Miller?
+NUM:period Câți ani avea Ioana d'Arc când a murit?
+DESC:def Ce înseamnă cuvântul două săptămâni?
+DESC:def Ce este dianetica?
+LOC:city Care este capitala Etiopiei?
+NUM:period Cât timp este un elefant însărcinat?
+DESC:manner Cum a murit Janice Joplin?
+ENTY:lang Care este limba principală în Islanda?
+DESC:desc Care este diferența dintre posturile de radio AM și posturile de radio FM?
+DESC:def Ce este osteoporoza?
+HUM:ind Cine a fost prima femeie guvernator din SUA?
+DESC:def Ce este peyote?
+DESC:reason Pentru ce se folosește esofagul?
+DESC:def Ce este vâscozitatea?
+NUM:date În ce an a devenit Oklahoma stat?
+ABBR:abb Care este abrevierea pentru Texas?
+ENTY:substance Din ce este făcută o oglindă?
+LOC:other Unde pe corp se poartă un mortarboard?
+HUM:ind Ce a fost J.F.K. numele sotiei lui?
+ABBR:exp Ce înseamnă I.V. stand pentru?
+DESC:def Ce este canalul?
+LOC:other Unde este îngropat Hitler?
+DESC:def Ce sunt antiacidele?
+DESC:def Ce este fibroza pulmonară?
+DESC:def Ce sunt Quaalude?
+DESC:def Ce este naproxenul?
+DESC:def Ce este faringele streptococi?
+LOC:city Care este cel mai mare oraș din SUA?
+ENTY:dismed Ce este febra aftoasă?
+NUM:other Care este speranța de viață a unei bancnote de un dolar?
+ENTY:termeq Cum numești un sertar profesional pentru hărți?
+DESC:def Ce sunt aborigenii?
+DESC:def Ce este hibridizarea?
+ENTY:color Ce culoare este indigo?
+NUM:period Câți ani trebuie să ai pentru a închiria o mașină în Italia?
+ENTY:other Ce măsoară un barometru?
+ENTY:color Ce culoare are limba unei girafe?
+ABBR:exp Ce înseamnă USPS?
+NUM:date În ce an a intrat în grevă NFL?
+DESC:def Ce este vântul solar?
+NUM:date La ce dată a aterizat Neil Armstrong pe Lună?
+NUM:date Când a fost bombardată Hiroshima?
+LOC:other Unde este râul Savannah?
+HUM:ind Cine a fost prima femeie ucisă în războiul din Vietnam?
+LOC:other Care planetă are cel mai puternic câmp magnetic dintre toate planetele?
+HUM:ind Cine este guvernatorul Alaska?
+NUM:date În ce an a preluat puterea Mussolini în Italia?
+LOC:city Care este capitala Persiei?
+LOC:other Unde este turnul eiffel ?
+NUM:count Câte inimi are o caracatiță?
+DESC:def Ce este pneumonia?
+LOC:other Care este cel mai adânc lac din SUA?
+DESC:def Ce este o pilă de combustibil?
+HUM:ind Cine a fost primul președinte al SUA care a apărut la televizor?
+LOC:other Unde este Muzeul Ligii Mici?
+ENTY:other Care sunt cele două tipuri de gemeni?
+LOC:other Care este cea mai strălucitoare stea?
+DESC:def Ce este diabetul?
+NUM:date Când a fost împușcat președintele Kennedy?
+ABBR:exp Ce este TMJ?
+ENTY:color Ce culoare are laptele de iac?
+NUM:date La ce dată s-a născut Dwight D. Eisenhower?
+ABBR:exp Ce înseamnă termenul tehnic ISDN?
+DESC:reason De ce soarele este galben?
+NUM:money Care este rata de conversie între dolari și lire sterline?
+NUM:date Când s-a născut Abraham Lincoln?
+DESC:def Ce este Calea Lactee?
+DESC:def Ce este mucegaiul?
+NUM:date În ce an s-a născut Mozart?
+ENTY:animal Cum se numește un grup de broaște?
+ENTY:veh Cum se numește nava lui William Penn?
+NUM:other Care este punctul de topire al aurului?
+LOC:other Care este adresa de la Casa Albă?
+DESC:def Ce este grisul?
+ENTY:food Din ce fructe este făcut sosul Melba?
+DESC:def Ce este Ursa Major?
+NUM:perc Care este procentul de apă din corpul uman?
+NUM:weight Cât cântărește apa?
+ENTY:event Cum se numea programul de reformă al președintelui Lyndon Johnson?
+NUM:perc Care este rata crimelor în Windsor, Ontario?
+HUM:ind Cine este singurul președinte care a îndeplinit 2 mandate neconsecutive?
+NUM:other Care este populația Australiei?
+HUM:ind Cine a pictat tavanul Capelei Sixtine?
+ENTY:dismed Numiți un stimulent.
+DESC:desc Care este efectul vulcanilor asupra climei?
+NUM:date În ce an a început spectacolul Andy Griffith?
+DESC:def Ce este ploaia acidă?
+NUM:date Care este data independenței Mexicului?
+LOC:other Care este locația lacului Champlain?
+ENTY:plant Ce este floarea statului Illinois?
+ENTY:animal Care este pasărea statului Maryland?
+DESC:def Ce este argintul viu?
+HUM:ind Cine a scris `` Divina Comedie ''?
+NUM:speed Care este viteza luminii?
+NUM:dist Care este lățimea unui teren de fotbal?
+DESC:reason De ce în tenis zero punctele sunt numite dragoste?
+ENTY:animal Ce fel de câine era Toto în Vrăjitorul din Oz?
+DESC:def Ce este tiroida?
+DESC:def Ce înseamnă ciao?
+ENTY:body Care este singura arteră care transportă sânge albastru de la inimă la plămâni?
+NUM:other Cât de des erupe Old Faithful în Parcul Național Yellowstone?
+DESC:def Ce este acidul acetic?
+NUM:dist Care este altitudinea St. Louis, MO?
+ENTY:color Ce culoare devine hârtia de turnesol când intră în contact cu un acid puternic?
+ENTY:color Care sunt culorile drapelului german?
+DESC:def Ce este Moulin Rouge?
+LOC:other Ce port maritim sovietic este la Marea Neagră?
+NUM:weight Care este greutatea atomică a argintului?
+ENTY:currency Ce monedă folosesc în Brazilia?
+DESC:def Ce sunt agenții patogeni?
+DESC:def Ce este boala vacii nebune?
+ENTY:food Numiți un aliment bogat în zinc.
+NUM:date Când a intrat Carolina de Nord în Uniune?
+LOC:other Unde locuiesc melcii mere?
+DESC:def Ce este etica ?
+ABBR:exp Ce înseamnă CPR?
+DESC:def Ce este o anuitate?
+HUM:ind Cine l-a ucis pe John F. Kennedy?
+HUM:ind Cine a fost primul vicepreședinte al SUA?
+ENTY:substance Ce piatră de naștere este turcoazul?
+HUM:ind Cine a fost primul președinte american care a mers într-un automobil la inaugurarea sa?
+NUM:period Câți ani avea cel mai tânăr președinte al Statelor Unite?
+NUM:date Când s-a născut Ulysses S. Grant?
+DESC:def Ce este distrofia musculară?
+HUM:ind Cine a locuit în castelul Neuschwanstein?
+DESC:def Ce este propilenglicolul?
+DESC:def Ce este o tulburare de panică?
+HUM:ind Cine a inventat camera instant Polaroid?
+DESC:def Ce este un cancerigen?
+ENTY:animal Cum se numește puiul de leu?
+NUM:other Care este populația lumii?
+DESC:def Ce este nepotismul?
+DESC:def Ce este turnarea sub presiune?
+DESC:def Ce este miopia?
+NUM:other Care este rata impozitului pe vânzări în New York?
+NUM:perc Țările în curs de dezvoltare cuprind ce procent din populația lumii?
+LOC:mount Care este al patrulea cel mai înalt munte din lume?
+HUM:ind Care este porecla lui Shakespeare?
+ENTY:substance Care este cel mai greu element natural?
+NUM:date Când este Ziua Tatălui?
+ABBR:exp Ce înseamnă acronimul NASA?
+NUM:dist Cât de lung este râul Columbia în mile?
+LOC:city Ziarul din ce oraș se numește ``The Star''?
+DESC:def Ce este dioxidul de carbon?
+LOC:other Unde este linia Mason/Dixon?
+NUM:date Când a fost ceaiul din Boston?
+DESC:def Ce este metabolismul?
+HUM:ind Care președinte al S.U.A. a apărut în „Laugh-In”?
+ENTY:substance Din ce sunt făcute țigările?
+LOC:city Care este capitala Zimbabwe?
+ABBR:exp Ce reprezintă NASA?
+ENTY:plant Care este floarea statului Michigan?
+DESC:def Ce sunt semiconductorii?
+DESC:def Ce este energia nucleară?
+DESC:def Ce este un tsunami?
+HUM:ind Cine este congresmanul din statul Texas din comitetul forțelor armate?
+HUM:ind Cine a fost președinte în 1913?
+NUM:date Când a fost primul transplant de rinichi?
+LOC:other Care sunt cele două teritorii ale Canadei?
+ENTY:veh Cum se numea avionul pe care Lindbergh a zburat singur peste Atlantic?
+DESC:def Ce este genocidul?
+LOC:other Pe ce continent se află Argentina?
+ENTY:other Ce mănăstire a fost atacată de vikingi la sfârșitul secolului al VIII-lea?
+DESC:def Ce este un cutremur?
+LOC:other Unde se află cel mai înalt roller coaster?
+DESC:def Ce sunt enzimele?
+HUM:ind Cine a descoperit oxigenul?
+DESC:def Ce este bangers and mash?
+ENTY:animal Care este numele dat Tigrului de la Universitatea de Stat din Louisiana?
+LOC:other Unde sunt păstrate bijuteriile coroanei britanice?
+HUM:ind Cine a fost prima persoană care a ajuns la Polul Nord?
+DESC:def Ce este un ulcer?
+DESC:def Ce este vertijul?
+DESC:def Ce este testul spirometrului?
+NUM:date Când este prima zi oficială de vară?
+ABBR:exp Ce înseamnă abrevierea SOS?
+ENTY:animal Care este cea mai mică pasăre din Marea Britanie?
+HUM:ind Cine a inventat Trivial Pursuit?
+ENTY:substance Ce gaze sunt în troposferă?
+LOC:country Care țară are cea mai mare poluare a apei?
+ENTY:animal Care este numele științific pentru elefant?
+HUM:ind Cine este actrița cunoscută pentru rolul din filmul „Gypsy”?
+ENTY:animal Ce rasă de câini de vânătoare au avut Beverly Hillbillies?
+LOC:other Care este cel mai ploios loc de pe Pământ?
+HUM:ind Cine a fost primul afro-american care a câștigat Premiul Nobel pentru literatură?
+NUM:date Când este ziua Sf. Patrick?
+ENTY:animal Care era numele câinelui lui FDR?
+ENTY:color Ce culori trebuie amestecate pentru a obține culoarea roz?
+ENTY:sport Care este cel mai popular sport din Japonia?
+ENTY:food Care este ingredientul activ din bicarbonatul de sodiu?
+NUM:date Când s-a născut Thomas Jefferson?
+NUM:temp Cât de rece ar trebui să fie un frigider?
+NUM:date Când a fost inventat telefonul?
+ENTY:color Care este cea mai comună culoare a ochilor?
+LOC:other Unde a fost primul teren de golf din Statele Unite?
+DESC:def Ce este schizofrenia?
+DESC:def Ce este angiotensina?
+HUM:gr Ce a organizat Jesse Jackson?
+ENTY:animal Care este pasărea statului New York?
+LOC:other Ce este Parcul Național din Utah?
+NUM:date Care este ziua lui Susan B. Anthony?
+LOC:state În ce stare ați găsi Munții Catskill?
+ENTY:termeq Cum numești un cuvânt care se scrie la fel înapoi și înainte?
+DESC:def Ce sunt pediatrii?
+HUM:gr Ce lanț de magazine are sediul în Bentonville, Arkansas?
+DESC:def Ce sunt celulele solare?
+DESC:def Ce este dobânda compusă?
+DESC:def Ce sunt caperele?
+DESC:def Ce este un antigen?
+ENTY:currency Ce monedă folosește Luxemburg?
+NUM:other Care este populația Venezuelei?
+ENTY:other Ce tip de polimer este folosit pentru vestele antiglonț?
+ENTY:currency Ce monedă folosește Argentina?
+DESC:def Ce este un termometru?
+LOC:city Ce oraș canadian are cea mai mare populație?
+ENTY:color Ce culoare au greierii?
+LOC:country Care țară a dat New York-ului Statuia Libertății?
+ENTY:product Cum se numea primul satelit american trimis în spațiu?
+ENTY:substance Ce piatră prețioasă este o formă de carbon pur?
+ENTY:substance Ce fel de gaz este într-un bec fluorescent?
+DESC:def Ce este artrita reumatoidă?
+LOC:other Ce râu trece prin Rowe, Italia?
+DESC:def Ce este paralizia cerebrală?
+LOC:city Ce oraș este cunoscut și sub numele de „Poarta către Vest”?
+NUM:dist Cât de departe este luna?
+ENTY:other Care este sursa gazelor naturale?
+ENTY:veh Cu ce ​​navă spațială și-a făcut zborul istoric din 1961 astronautul american Alan Shepard?
+DESC:def Ce este pectina?
+DESC:def Ce este biodiversitatea?
+ENTY:techmeth Care este cel mai simplu mod de a elimina tapetul?
+NUM:date În ce an și-a început călătoria Titanic-ul?
+NUM:count Cât de mult un măr este apă?
+HUM:ind Cine a fost al 22-lea președinte al SUA?
+ENTY:currency Care sunt banii pe care îi folosesc în Zambia?
+NUM:count Câți picioare într-o milă?
+ENTY:substance Care este piatra natală a lunii octombrie?
+DESC:def Ce este e-coli?
