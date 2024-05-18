@@ -85,7 +85,7 @@ class TextProcessing:
         return headword
 
     def extractHypernim(self, headword):
-        hypernim = '-'
+        hypernim = ''
         if len(wordnet.synsets(headword)) > 0:
             syn = wordnet.synsets(headword)[0]
             hypernim = syn.hypernym_paths()[0]
@@ -108,7 +108,6 @@ class TextProcessing:
             hypWeight = 1
             for hyp in reversed(hypernim):
                 hyp = str(hyp).split(".")[0]
-                print(hyp)
                 hyp = hyp.split("'")[1]
                 queryExpansion.append(hyp + "~" + str(hypWeight))
                 hypWeight = round(hypWeight * 60 / 100, 2)
@@ -138,8 +137,10 @@ class TextProcessing:
         return lemmatized_words
 
     def nGrams(self, query):
-        unigram_list = list(ngrams(query, 1))
-        bigram_list = list(ngrams(query, 2))
+        unigram_list = [x.text for x in query]
+        bigram_list = []
+        for i in range(len(query)-1):
+            bigram_list.append(query[i].lemma_.lower() + "-" + query[i+1].lemma_.lower())
         return unigram_list, bigram_list
 
     def partOfSpeech(self, query):

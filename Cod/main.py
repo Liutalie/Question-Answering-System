@@ -1,31 +1,33 @@
 import pandas
 import sklearn
 import numpy as np
+import pickle
 from sklearn.svm import LinearSVC
 
 import TextProcessing
 
 tempX = None
 tempY = None
+rowTemplate = None
 
 def trainAlgorithm(training_feature_list, true_positive_training, SVM):
-    for list in training_feature_list:
-        newMatrix = []
-        all_features = []
-        for feature_list in training_feature_list:
-            for elem in feature_list:
-                all_features.append(elem)
+    global rowTemplate
+    newMatrix = []
+    all_features = []
+    for elem_list in training_feature_list:
+        for elem in elem_list:
+            all_features.append(elem)
 
-        uniqueFeatures = list(set(all_features))
-        rowTemplate = dict.fromkeys(uniqueFeatures, 0)
+    uniqueFeatures = list(set(all_features))
+    rowTemplate = dict.fromkeys(uniqueFeatures, 0)
 
-        for feature_list in training_feature_list:
-            row = rowTemplate.copy()
-            for elem in feature_list:
-                row[elem] = 1
+    for feature_list in training_feature_list:
+        row = rowTemplate.copy()
+        for elem in feature_list:
+            row[elem] = 1
 
-            newMatrix.append(row)
-        myDataframe = pandas.DataFrame(newMatrix)
+        newMatrix.append(row)
+    myDataframe = pandas.DataFrame(newMatrix)
 
     X_train1, X_test1, y_train1, y_test1 = sklearn.model_selection.train_test_split(myDataframe,
                                                                                     true_positive_training, test_size=0.2,
@@ -38,33 +40,33 @@ def trainAlgorithm(training_feature_list, true_positive_training, SVM):
     myDataframe = X_train1
     true_positive_training = y_train1
     SVM.fit(myDataframe, true_positive_training)
+    with open('SVM_Model.pkl','wb') as f:
+        pickle.dump(SVM,f)
+
+    # with open('SVM_Model.pkl', 'rb') as f:
+    #     SVM = pickle.load(f)
+
 
 def testAlgorithm(testing_feature_list, true_positive_testing, SVM):
     global tempX
     global tempY
-    for list in training_feature_list:
-        newMatrix = []
-        all_features = []
-        for feature_list in training_feature_list:
-            for elem in feature_list:
-                all_features.append(elem)
+    global rowTemplate
+    newMatrix = []
 
-        uniqueFeatures = list(set(all_features))
-        rowTemplate = dict.fromkeys(uniqueFeatures, 0)
-
-        for feature_list in training_feature_list:
-            row = rowTemplate.copy()
-            for elem in feature_list:
+    for feature_list in testing_feature_list:
+        row = rowTemplate.copy()
+        for elem in feature_list:
+            if elem in list(row.keys()):
                 row[elem] = 1
 
-            newMatrix.append(row)
-        myDataframe = pandas.DataFrame(newMatrix)
+        newMatrix.append(row)
+    myDataframe = pandas.DataFrame(newMatrix)
 
-    results= SVM.predict(myDataframe)
+    results = SVM.predict(myDataframe)
 
     testData = sklearn.metrics.classification_report(results, true_positive_testing,
                                                               zero_division=0,labels=np.unique(results))
-    pass
+    print(testData)
 
 
 if __name__ == '__main__':
@@ -102,8 +104,9 @@ if __name__ == '__main__':
                 headword = '-'
             else:
                 hypernym = textProcessing.extractHypernim(headword)
-                queryExpansion = textProcessing.queryExpansion(hypernym)
-                hypernym = textProcessing.hypernimUntilRoot(hypernym)
+                if len(hypernym) > 0:
+                    queryExpansion = textProcessing.queryExpansion(hypernym)
+                    hypernym = textProcessing.hypernimUntilRoot(hypernym)
             list_of_feature = [unigrams, bigrams, headword, hypernym, queryExpansion]
             unpacked_features = []
             for item in list_of_feature:
@@ -118,8 +121,9 @@ if __name__ == '__main__':
             else:
                 testing_feature_list.append(unpacked_features)
                 true_positive_testing.append(category)
+
     trainAlgorithm(training_feature_list,true_positive_training,SVM)
-    testAlgorithm(training_feature_list,true_positive_training,SVM)
+    testAlgorithm(testing_feature_list,true_positive_testing,SVM)
 
 
 
