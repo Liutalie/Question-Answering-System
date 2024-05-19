@@ -4,6 +4,7 @@ from nltk.util import ngrams
 from sklearn.feature_extraction.text import TfidfVectorizer
 import spacy
 from nltk.corpus import wordnet
+import regex as re
 from deep_translator import GoogleTranslator
 
 # def translateText(self):
@@ -17,6 +18,7 @@ class TextProcessing:
         self.m_stopWords = []
         self.nlp = spacy.load('en_core_web_sm')
         self.datasets = {}
+        self.stopwords = []
 
     def readData(self):
         trainData = {}
@@ -113,9 +115,9 @@ class TextProcessing:
                 hypWeight = round(hypWeight * 60 / 100, 2)
         return queryExpansion
 
-    def readStopWords(self):
-        with open('stop_words_romanian.json', 'r', encoding='utf-8') as file:
-            self.m_stopWords = json.load(file)
+    def readStopwords(self):
+        with open('stopwords.txt', 'r') as f:
+            self.stopwords = f.read().splitlines()
 
     def removeStopWords(self, query):
         words = query.split()
@@ -155,8 +157,37 @@ class TextProcessing:
         dependencies = [(token.text, token.dep_, token.head.text) for token in doc]
         return dependencies
 
-    def keywordExtraction(self, query):
-        vectorizer = TfidfVectorizer(max_features=10)
-        matrix = vectorizer.fit_transform(query.split())
-        keywords = vectorizer.get_feature_names_out()
-        return keywords, matrix
+    def extractKeywords(self, question):
+        self.readStopwords()
+        keywords = []
+
+        # prepare the question
+        question = question.replace("''", "\"")
+        question = question.replace("``", "\"")
+
+        # heuristic 1
+
+        quotedWords = re.findall('"([^"]*)"', question)
+        for quote in quotedWords:
+            temp = self.nlp(quote.rstrip().lstrip())
+
+            for token in temp:
+                if token.text.lower() not in self.stopwords:
+                    keywords.append(token.text.lower())
+
+        # heuristics
+        self.nlp.add_pipe("merge_noun_chunks")
+        doc = self.nlp(question)
+        for item in doc:
+            if item.pos_ in ["NOUN", "PROPN"]:
+                keywords.append(item.text)
+
+        self.nlp.remove_pipe("merge_noun_chunks")
+
+        # heuristic 5
+
+        for token in doc:
+            if token.pos_ == "VERB":
+                keywords.append(token.text)
+
+        return keywords

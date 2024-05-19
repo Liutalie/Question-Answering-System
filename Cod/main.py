@@ -4,7 +4,7 @@ import numpy as np
 import pickle
 from sklearn.svm import LinearSVC
 
-import TextProcessing
+import TextProcessing, InformationRetrieval
 
 tempX = None
 tempY = None
@@ -69,17 +69,7 @@ def testAlgorithm(testing_feature_list, true_positive_testing, SVM):
     print(testData)
 
 
-if __name__ == '__main__':
-    textProcessing = TextProcessing.TextProcessing()
-    textProcessing.readData()
-
-    training_feature_list = []
-    testing_feature_list = []
-    true_positive_training = []
-    true_positive_testing = []
-    SVM = LinearSVC()
-
-
+def getTrainTestFeatures():
     for dataset in textProcessing.datasets.items():
         for key in dataset[1]:
             question = key
@@ -124,6 +114,28 @@ if __name__ == '__main__':
 
     trainAlgorithm(training_feature_list,true_positive_training,SVM)
     testAlgorithm(testing_feature_list,true_positive_testing,SVM)
+
+if __name__ == '__main__':
+    infoRetrieval = InformationRetrieval.InformationRetrieval()
+
+
+
+
+
+    textProcessing = TextProcessing.TextProcessing()
+    keywords = textProcessing.extractKeywords('How far is it from Denver to Aspen ?')
+    textProcessing.readData()
+
+
+    training_feature_list = []
+    testing_feature_list = []
+    true_positive_training = []
+    true_positive_testing = []
+    SVM = LinearSVC()
+
+
+
+
 
 
 
