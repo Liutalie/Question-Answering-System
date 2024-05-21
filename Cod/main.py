@@ -79,14 +79,10 @@ def getTrainTestFeatures():
             # question features
             unigrams = []
             bigrams = []
-            wordShapes = []
             headword = ''
             hypernym = '-'
-            relatedWords = []
             queryExpansion = []
-            questionCategory = ''
 
-            wordShapeDict = {"lower": 0, "mixed": 0, "numbers": 0, 'other': 0}
 
             unigrams, bigrams = textProcessing.nGrams(doc)
             headword = textProcessing.extractHeadWord(doc)
@@ -117,13 +113,15 @@ def getTrainTestFeatures():
 
 if __name__ == '__main__':
     infoRetrieval = InformationRetrieval.InformationRetrieval()
+    infoRetrieval.documentProcessing()
+    infoRetrieval.frequencyOfWords()
 
 
 
 
 
     textProcessing = TextProcessing.TextProcessing()
-    keywords = textProcessing.extractKeywords('How far is it from Denver to Aspen ?')
+    # keywords = textProcessing.extractKeywords('How far is it from Denver to Aspen ?')
     textProcessing.readData()
 
 
