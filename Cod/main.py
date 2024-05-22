@@ -115,7 +115,9 @@ if __name__ == '__main__':
     infoRetrieval = InformationRetrieval.InformationRetrieval()
     infoRetrieval.documentProcessing()
     infoRetrieval.frequencyOfWords()
-
+    question = 'Has Sang Nila Utama visited Singapore?'
+    infoRetrieval.questionProcessing(question)
+    infoRetrieval.Normalization()
 
 
 
