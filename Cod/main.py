@@ -115,7 +115,7 @@ if __name__ == '__main__':
     infoRetrieval = InformationRetrieval.InformationRetrieval()
     infoRetrieval.documentProcessing()
     infoRetrieval.frequencyOfWords()
-    question = 'Has Sang Nila Utama visited Singapore?'
+    question = 'Who assassinated Lincoln?'
     infoRetrieval.questionProcessing(question)
     infoRetrieval.Normalization()
 
@@ -123,7 +123,7 @@ if __name__ == '__main__':
 
 
     textProcessing = TextProcessing.TextProcessing()
-    # keywords = textProcessing.extractKeywords('How far is it from Denver to Aspen ?')
+    keywords = textProcessing.extractKeywords('The sociolinguistic situation of Arabic provides a prime example of what?')
     textProcessing.readData()
 
 
