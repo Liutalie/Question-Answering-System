@@ -1,10 +1,8 @@
 import math
 import os
 import regex as re
-import unidecode
-
-import nltk
 from nltk.corpus import stopwords
+
 
 class InformationRetrieval:
     def __init__(self):
@@ -15,7 +13,7 @@ class InformationRetrieval:
         self.m_unique_words = []
         self.m_word_frequency_all = {elem:None for elem in os.listdir(r'D:\Facultate\MASTER\Anul 2\Disertatie\Cod\Dataset\text_data') if elem.endswith('.clean')}
         self.m_word_frequency_interogation = {elem:None for elem in os.listdir(r'D:\Facultate\MASTER\Anul 2\Disertatie\Cod\Dataset\text_data') if elem.endswith('.clean')}
-        self.list_of_similarity = []
+        self.m_list_of_similarity = []
 
         with open(r'D:\Facultate\MASTER\Anul 2\Disertatie\Cod\Dataset\abrevieri.txt') as folder:
             #PRIMUL CUVANT SE VEDE URAT
@@ -99,7 +97,6 @@ class InformationRetrieval:
         # Normalizare interogare
         for word in self.m_word_frequency_interogation:
             self.m_word_frequency_interogation[word] = self.m_word_frequency_interogation[word] / maximum_interogation
-        print([self.m_word_frequency_interogation[elem] for elem in self.m_word_frequency_interogation if self.m_word_frequency_interogation[elem] != 0])
 
         # Normalizare documente
         for doc in self.m_word_frequency_all:
@@ -112,17 +109,6 @@ class InformationRetrieval:
         for doc in self.m_word_frequency_all:
             for word in self.m_word_frequency_all[doc]:
                 sum_words += (self.m_word_frequency_all[doc][word] - self.m_word_frequency_interogation[word]) ** 2
-            self.list_of_similarity.append((doc, math.sqrt(sum_words)))
+            self.m_list_of_similarity.append((doc, math.sqrt(sum_words)))
             sum_words = 0
-        self.list_of_similarity.sort(key=lambda x: x[1])
-
-
-
-
-
-
-
-
-
-
-
+        self.m_list_of_similarity.sort(key=lambda x: x[1])

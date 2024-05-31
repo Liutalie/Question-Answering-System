@@ -1,16 +1,7 @@
-import json
 from nltk.stem.snowball import SnowballStemmer
-from nltk.util import ngrams
-from sklearn.feature_extraction.text import TfidfVectorizer
 import spacy
 from nltk.corpus import wordnet
 import regex as re
-from deep_translator import GoogleTranslator
-
-# def translateText(self):
-#     with open('Dataset/Test.txt', 'r') as file:
-#         self.m_testText = GoogleTranslator(source='en', target='ro').translate(file.read())
-#     print(self.m_testText)
 
 
 class TextProcessing:
@@ -127,35 +118,12 @@ class TextProcessing:
                 newText.append(word.lower())
         return newText
 
-    def stemmingOfWords(self, query):
-        stemmer = SnowballStemmer('romanian')
-        stemmed_words = [stemmer.stem(word) for word in query.split()]
-        return stemmed_words
-
-    def lemmaOfWords(self, query):
-        lemma = self.nlp
-        doc = lemma(query)
-        lemmatized_words = [token.lemma_ for token in doc]
-        return lemmatized_words
-
     def nGrams(self, query):
         unigram_list = [x.text for x in query]
         bigram_list = []
         for i in range(len(query)-1):
             bigram_list.append(query[i].lemma_.lower() + "-" + query[i+1].lemma_.lower())
         return unigram_list, bigram_list
-
-    def partOfSpeech(self, query):
-        nlp = self.nlp
-        doc = nlp(query)
-        part_of_speech = [(token.text, token.pos_) for token in doc]
-        return part_of_speech
-
-    def dependencyParsing(self, query):
-        nlp = self.nlp
-        doc = nlp(query)
-        dependencies = [(token.text, token.dep_, token.head.text) for token in doc]
-        return dependencies
 
     def extractKeywords(self, question):
         self.readStopwords()
