@@ -1,7 +1,10 @@
+import AnswerExtraction2
 import pandas
 import sklearn
 import numpy as np
 import pickle
+
+from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.svm import LinearSVC
 
 import TextProcessing, InformationRetrieval
@@ -9,6 +12,7 @@ import TextProcessing, InformationRetrieval
 tempX = None
 tempY = None
 rowTemplate = None
+
 
 def trainAlgorithm(training_feature_list, true_positive_training, SVM):
     global rowTemplate
@@ -31,7 +35,7 @@ def trainAlgorithm(training_feature_list, true_positive_training, SVM):
 
     X_train1, X_test1, y_train1, y_test1 = sklearn.model_selection.train_test_split(myDataframe,
                                                                                     true_positive_training, test_size=0.2,
-                                                                                    shuffle=False)
+                                                                                    shuffle=True, stratify=true_positive_training)
 
     global tempX
     global tempY
@@ -40,11 +44,8 @@ def trainAlgorithm(training_feature_list, true_positive_training, SVM):
     myDataframe = X_train1
     true_positive_training = y_train1
     SVM.fit(myDataframe, true_positive_training)
-    with open('SVM_Model.pkl','wb') as f:
-        pickle.dump(SVM,f)
-
-    # with open('SVM_Model.pkl', 'rb') as f:
-    #     SVM = pickle.load(f)
+    with open('SVM_Model_stratify.pkl', 'wb') as f:
+        pickle.dump(SVM, f)
 
 
 def testAlgorithm(testing_feature_list, true_positive_testing, SVM):
@@ -69,12 +70,17 @@ def testAlgorithm(testing_feature_list, true_positive_testing, SVM):
     print(testData)
 
 
-def getTrainTestFeatures():
+def getTrainTestFeatures(textProcessing):
+    training_feature_list = []
+    testing_feature_list = []
+    true_positive_training = []
+    true_positive_testing = []
+    SVM = LinearSVC()
+    textProcessing.readData()
     for dataset in textProcessing.datasets.items():
         for key in dataset[1]:
             question = key
             category = dataset[1][key][1]
-
             doc = textProcessing.nlp(question)
             # question features
             unigrams = []
@@ -82,8 +88,6 @@ def getTrainTestFeatures():
             headword = ''
             hypernym = '-'
             queryExpansion = []
-
-
             unigrams, bigrams = textProcessing.nGrams(doc)
             headword = textProcessing.extractHeadWord(doc)
             if headword == '':  # could not find the headword
@@ -108,62 +112,113 @@ def getTrainTestFeatures():
                 testing_feature_list.append(unpacked_features)
                 true_positive_testing.append(category)
 
-    trainAlgorithm(training_feature_list,true_positive_training,SVM)
-    testAlgorithm(testing_feature_list,true_positive_testing,SVM)
+    trainAlgorithm(training_feature_list, true_positive_training, SVM)
+    testAlgorithm(testing_feature_list, true_positive_testing, SVM)
 
-if __name__ == '__main__':
-    infoRetrieval = InformationRetrieval.InformationRetrieval()
+
+def predictQuestionCategory(question):
+    with open('SVM_Model_stratify.pkl', 'rb') as f:
+        SVM = pickle.loads(f.read())
+    textProcessing = TextProcessing.TextProcessing()
+    textProcessing.readData()
+    testing_feature_list = []
+    doc = textProcessing.nlp(question)
+
+    # question features
+    unigrams = []
+    bigrams = []
+    headword = ''
+    hypernym = '-'
+    queryExpansion = []
+    unigrams, bigrams = textProcessing.nGrams(doc)
+    headword = textProcessing.extractHeadWord(doc)
+    if headword == '':  # could not find the headword
+        headword = '-'
+    else:
+        hypernym = textProcessing.extractHypernim(headword)
+        if len(hypernym) > 0:
+            queryExpansion = textProcessing.queryExpansion(hypernym)
+            hypernym = textProcessing.hypernimUntilRoot(hypernym)
+    list_of_feature = [unigrams, bigrams, headword, hypernym, queryExpansion]
+    unpacked_features = []
+    for item in list_of_feature:
+        if isinstance(item, list):
+            unpacked_features.extend(item)
+        else:
+            unpacked_features.append(item)
+    testing_feature_list.append(unpacked_features)
+    feature_names = list(SVM.feature_names_in_)
+    question_frequency_dict = {elem: 0 for elem in feature_names}
+
+    newMatrix = []
+    for feature_list in testing_feature_list:
+        for elem in feature_list:
+            if elem in list(question_frequency_dict.keys()):
+                question_frequency_dict[elem] = 1
+
+        newMatrix.append(question_frequency_dict)
+    myDataframe = pandas.DataFrame(newMatrix)
+    return (SVM.predict(myDataframe))
+
+
+def getAnswer(question, infoRetrieval, textProcessing, answerExtraction):
+    prediction_result = predictQuestionCategory(question)
+
     infoRetrieval.documentProcessing()
     infoRetrieval.frequencyOfWords()
-    question = 'Who assassinated Lincoln?'
     infoRetrieval.questionProcessing(question)
     infoRetrieval.Normalization()
 
+    keywords = textProcessing.extractKeywords(question)
+
+    sentences_after_separators = answerExtraction.findRelevantSentences(
+        keywords, infoRetrieval.m_list_of_similarity[0][0])
+
+    list_of_possbile_answers = []
+    temp_max = answerExtraction.m_combined_scored[0][1]
+    for elem in answerExtraction.m_combined_scored:
+        if elem[1] == temp_max:
+            list_of_possbile_answers.append(elem[0])
+        else:
+            break
+
+    for elem in list_of_possbile_answers:
+        for elem2 in sentences_after_separators:
+            if elem == elem2[0]:
+                list_of_possbile_answers[list_of_possbile_answers.index(elem)] = answerExtraction.m_all_sentences[
+                    sentences_after_separators[elem2[0]][0]]
+
+    for elem in list_of_possbile_answers:
+        print(elem[1])
 
 
-
+if __name__ == '__main__':
+    infoRetrieval = InformationRetrieval.InformationRetrieval()
     textProcessing = TextProcessing.TextProcessing()
-    keywords = textProcessing.extractKeywords('The sociolinguistic situation of Arabic provides a prime example of what?')
-    textProcessing.readData()
-
-
-    training_feature_list = []
-    testing_feature_list = []
-    true_positive_training = []
-    true_positive_testing = []
-    SVM = LinearSVC()
+    answerExtraction = AnswerExtraction2.AnswerExtraction()
+    # getTrainTestFeatures(textProcessing)
+    getAnswer('Who assassinated Lincoln?', infoRetrieval, textProcessing, answerExtraction)
 
 
 
 
-
-
-
-
-    # textProcessing.readStopWords()
-    # # textProcessing.translateText()
-    # query = "Acesta este un exemplu de query"
-    # query = query.lower()
+    # infoRetrieval = InformationRetrieval.InformationRetrieval()
+    # infoRetrieval.documentProcessing()
+    # infoRetrieval.frequencyOfWords()
+    # question = 'Who assassinated Lincoln?'
+    # infoRetrieval.questionProcessing(question)
+    # infoRetrieval.Normalization()
     #
-    # queryStemming = textProcessing.stemmingOfWords(query)
-    # print(queryStemming)
     #
-    # queryLemma = textProcessing.lemmaOfWords(query)
-    # print(queryLemma)
     #
-    # queryStopWords = textProcessing.removeStopWords(query)
-    # print(queryStopWords)
     #
-    # queryUnigram, queryBigram = textProcessing.nGrams(query)
-    # print(queryUnigram)
-    # print(queryBigram)
+    # textProcessing = TextProcessing.TextProcessing()
+    # keywords = textProcessing.extractKeywords('When do bumblebee colonies reach peak population?')
+    # textProcessing.readData()
     #
-    # part_of_speech = textProcessing.partOfSpeech(query)
-    # print(part_of_speech)
     #
-    # dependencies = textProcessing.dependencyParsing(query)
-    # print(dependencies)
-    #
-    # keywords, matrix = textProcessing.keywordExtraction(query)
-    # print(matrix)
-    # print(keywords)
+    # training_feature_list = []
+    # testing_feature_list = []
+    # true_positive_training = []
+    # true_positive_testing = []
+    # SVM = LinearSVC()
