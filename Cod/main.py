@@ -1,4 +1,4 @@
-import AnswerExtraction2
+import AnswerExtraction
 import pandas
 import sklearn
 import numpy as np
@@ -188,37 +188,12 @@ def getAnswer(question, infoRetrieval, textProcessing, answerExtraction):
                 list_of_possbile_answers[list_of_possbile_answers.index(elem)] = answerExtraction.m_all_sentences[
                     sentences_after_separators[elem2[0]][0]]
 
-    for elem in list_of_possbile_answers:
-        print(elem[1])
+    answerExtraction.namedEntityRecognition(list_of_possbile_answers, prediction_result, keywords)
 
 
 if __name__ == '__main__':
     infoRetrieval = InformationRetrieval.InformationRetrieval()
     textProcessing = TextProcessing.TextProcessing()
-    answerExtraction = AnswerExtraction2.AnswerExtraction()
+    answerExtraction = AnswerExtraction.AnswerExtraction()
     # getTrainTestFeatures(textProcessing)
-    getAnswer('Who assassinated Lincoln?', infoRetrieval, textProcessing, answerExtraction)
-
-
-
-
-    # infoRetrieval = InformationRetrieval.InformationRetrieval()
-    # infoRetrieval.documentProcessing()
-    # infoRetrieval.frequencyOfWords()
-    # question = 'Who assassinated Lincoln?'
-    # infoRetrieval.questionProcessing(question)
-    # infoRetrieval.Normalization()
-    #
-    #
-    #
-    #
-    # textProcessing = TextProcessing.TextProcessing()
-    # keywords = textProcessing.extractKeywords('When do bumblebee colonies reach peak population?')
-    # textProcessing.readData()
-    #
-    #
-    # training_feature_list = []
-    # testing_feature_list = []
-    # true_positive_training = []
-    # true_positive_testing = []
-    # SVM = LinearSVC()
+    getAnswer('Which countries established colonies in Canada?', infoRetrieval, textProcessing, answerExtraction)
