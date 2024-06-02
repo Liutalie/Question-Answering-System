@@ -187,9 +187,9 @@ def getAnswer(question, infoRetrieval, textProcessing, answerExtraction):
 
     for elem in list_of_possbile_answers:
         for elem2 in sentences_after_separators:
-            if elem == elem2[0]:
-                list_of_possbile_answers[list_of_possbile_answers.index(elem)] = answerExtraction.m_all_sentences[
-                    sentences_after_separators[elem2[0]][0]]
+            if elem == sentences_after_separators.index(elem2):
+                list_of_possbile_answers[list_of_possbile_answers.index(elem)] \
+                    = answerExtraction.m_all_sentences[sentences_after_separators[sentences_after_separators.index(elem2)][0]]
 
     answer = answerExtraction.namedEntityRecognition(list_of_possbile_answers, prediction_result, keywords)
     return answer
