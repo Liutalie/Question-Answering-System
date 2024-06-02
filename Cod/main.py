@@ -3,10 +3,13 @@ import pandas
 import sklearn
 import numpy as np
 import pickle
+from tkinter import *
+
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.svm import LinearSVC
 
+import GUI
 import TextProcessing, InformationRetrieval
 
 tempX = None
@@ -188,12 +191,20 @@ def getAnswer(question, infoRetrieval, textProcessing, answerExtraction):
                 list_of_possbile_answers[list_of_possbile_answers.index(elem)] = answerExtraction.m_all_sentences[
                     sentences_after_separators[elem2[0]][0]]
 
-    answerExtraction.namedEntityRecognition(list_of_possbile_answers, prediction_result, keywords)
+    answer = answerExtraction.namedEntityRecognition(list_of_possbile_answers, prediction_result, keywords)
+    return answer
 
 
 if __name__ == '__main__':
-    infoRetrieval = InformationRetrieval.InformationRetrieval()
-    textProcessing = TextProcessing.TextProcessing()
-    answerExtraction = AnswerExtraction.AnswerExtraction()
-    # getTrainTestFeatures(textProcessing)
-    getAnswer('Which countries established colonies in Canada?', infoRetrieval, textProcessing, answerExtraction)
+    root = Tk()
+    root.title("Question Answering System")
+    root.geometry("1200x500")
+    gui = GUI.GUI(root)
+    gui.pack(fill="both", expand=True)
+    root.mainloop()
+
+    # infoRetrieval = InformationRetrieval.InformationRetrieval()
+    # textProcessing = TextProcessing.TextProcessing()
+    # answerExtraction = AnswerExtraction.AnswerExtraction()
+    # # getTrainTestFeatures(textProcessing)
+    # getAnswer('Which countries established colonies in Canada?', infoRetrieval, textProcessing, answerExtraction)

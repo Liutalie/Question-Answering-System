@@ -3,6 +3,8 @@ import spacy
 from nltk.corpus import wordnet
 import regex as re
 
+merge_chunks = False
+
 
 class TextProcessing:
     def __init__(self):

@@ -4,6 +4,7 @@ import regex as re
 from nltk.stem import PorterStemmer
 
 nlp = spacy.load('en_core_web_sm')
+merge_chunk_flag = False
 
 mapping = {
     'abb': None,
@@ -182,6 +183,7 @@ class AnswerExtraction:
         return temp3_list
 
     def namedEntityRecognition(self, list_of_possbile_answers, prediction_result, keywords):
+        returned_values = []
         entity_found = False
         dict_of_entities = {}
         for sentence in list_of_possbile_answers:
@@ -218,7 +220,10 @@ class AnswerExtraction:
 
             if len(list(dict_dependency_entities.keys())) != 0:
                 sentence = list(dict_dependency_entities.keys())[0]
-                nlp.add_pipe("merge_noun_chunks")
+                global merge_chunk_flag
+                if not merge_chunk_flag:
+                    nlp.add_pipe("merge_noun_chunks")
+                    merge_chunk_flag = True
                 for sentence in dict_dependency_entities:
                     doc = nlp(sentence.text)
                     for elem in dict_dependency_entities[sentence]:
@@ -240,12 +245,13 @@ class AnswerExtraction:
                             max_key = inner_key
                             max_score = inner_value
                 if max_score > 0:
-                    print(max_key)
-                    print(list_of_possbile_answers[0][1])
+                    returned_values.append(max_key)
+                    returned_values.append(list_of_possbile_answers[0][1])
                 else:
-                    print(list_of_possbile_answers[0][1])
+                    returned_values.append(list_of_possbile_answers[0][1])
             else:
-                print(list_of_possbile_answers[0][1])
+                returned_values.append(list_of_possbile_answers[0][1])
         else:
-            print(list_of_possbile_answers[0][1])
+            returned_values.append(list_of_possbile_answers[0][1])
+        return returned_values
 
