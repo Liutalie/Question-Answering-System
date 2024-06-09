@@ -95,8 +95,12 @@ class InformationRetrieval:
         sum_words = 0
 
         # Normalizare interogare
-        for word in self.m_word_frequency_interogation:
-            self.m_word_frequency_interogation[word] = self.m_word_frequency_interogation[word] / maximum_interogation
+        if maximum_interogation != 0:
+            for word in self.m_word_frequency_interogation:
+                self.m_word_frequency_interogation[word] = self.m_word_frequency_interogation[word] / maximum_interogation
+        else:
+            for word in self.m_word_frequency_interogation:
+                self.m_word_frequency_interogation[word] = 0
 
         # Normalizare documente
         for doc in self.m_word_frequency_all:

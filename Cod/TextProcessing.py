@@ -9,9 +9,8 @@ merge_chunks = False
 class TextProcessing:
     def __init__(self):
         self.m_stopWords = []
-        self.nlp = spacy.load('en_core_web_sm')
-        self.datasets = {}
-        self.stopwords = []
+        self.m_nlp = spacy.load('en_core_web_sm')
+        self.m_datasets = {}
 
     def readData(self):
         trainData = {}
@@ -34,8 +33,8 @@ class TextProcessing:
             question = line.split(" ", 1)[1]
             testData[question.rstrip("\n")] = [classesCourse, classesFine]
 
-        self.datasets['train'] = trainData
-        self.datasets['test'] = testData
+        self.m_datasets['train'] = trainData
+        self.m_datasets['test'] = testData
 
     def extractHeadWord(self, query):
         listOfDependencies = {}
@@ -82,17 +81,17 @@ class TextProcessing:
     def extractHypernim(self, headword):
         hypernim = ''
         if len(wordnet.synsets(headword)) > 0:
-            syn = wordnet.synsets(headword)[0]
-            hypernim = syn.hypernym_paths()[0]
+            synsets = wordnet.synsets(headword)[0]
+            hypernim = synsets.hypernym_paths()[0]
         return hypernim
 
     def hypernimUntilRoot(self, hypernim):
         if len(hypernim) > 6:
-            hypernym = hypernim[6]  # to be checked
+            hypernym = hypernim[6]
             hypernym = str(hypernym).split(".")[0]
             hypernym = hypernym.split("'")[1]
         else:
-            hypernym = hypernim[len(hypernim) - 1]  # to be checked
+            hypernym = hypernim[len(hypernim) - 1]
             hypernym = str(hypernym).split(".")[0]
             hypernym = hypernym.split("'")[1]
         return hypernym
@@ -110,15 +109,7 @@ class TextProcessing:
 
     def readStopwords(self):
         with open('stopwords.txt', 'r') as f:
-            self.stopwords = f.read().splitlines()
-
-    def removeStopWords(self, query):
-        words = query.split()
-        newText = []
-        for word in words:
-            if word.lower() not in self.m_stopWords:
-                newText.append(word.lower())
-        return newText
+            self.m_stopwords = f.read().splitlines()
 
     def nGrams(self, query):
         unigram_list = [x.text for x in query]
@@ -139,20 +130,20 @@ class TextProcessing:
 
         quotedWords = re.findall('"([^"]*)"', question)
         for quote in quotedWords:
-            temp = self.nlp(quote.rstrip().lstrip())
+            temp = self.m_nlp(quote.rstrip().lstrip())
 
             for token in temp:
-                if token.text.lower() not in self.stopwords:
+                if token.text.lower() not in self.m_stopwords:
                     keywords.append(token.text.lower())
 
         # heuristics
-        self.nlp.add_pipe("merge_noun_chunks")
-        doc = self.nlp(question)
+        self.m_nlp.add_pipe("merge_noun_chunks")
+        doc = self.m_nlp(question)
         for item in doc:
             if item.pos_ in ["NOUN", "PROPN"]:
                 keywords.append(item.text)
 
-        self.nlp.remove_pipe("merge_noun_chunks")
+        self.m_nlp.remove_pipe("merge_noun_chunks")
 
         # heuristic 5
 

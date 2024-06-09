@@ -7,24 +7,24 @@ nlp = spacy.load('en_core_web_sm')
 merge_chunk_flag = False
 
 mapping = {
-    'abb': None,
-    'exp': None,
-    'animal': 'LOC',
-    'body': 'LOC',
+    'abb': "CARDINAL",
+    'exp': "CARDINAL",
+    'animal': 'NORP',
+    'body': 'ORG',
     'color': 'ENTY',
-    'cremat': 'ORG',
-    'currency': 'ENTY',
-    'dismed': 'ENTY',
+    'cremat': 'WORK_OF_ART',
+    'currency': 'MONEY',
+    'dismed': 'NORP',
     'event': 'EVENT',
     'food': 'PRODUCT',
     'instru': 'PRODUCT',
     'lang': 'LANGUAGE',
-    'letter': 'ENTY',
+    'letter': 'NORP',
     'other': 'ENTY',
-    'plant': 'PRODUCT',
+    'plant': 'NORP',
     'product': 'PRODUCT',
-    'religion': 'ENTY',
-    'sport': 'ENTY',
+    'religion': 'NORP',
+    'sport': 'NORP',
     'substance': 'ENTY',
     'symbol': 'ENTY',
     'techmeth': 'ENTY',
@@ -37,16 +37,23 @@ mapping = {
     'reason': None,
     'gr': 'ORG',
     'ind': 'PERSON',
-    'title': 'PERSON',
+    'title': 'ORG',
     'city': 'GPE',
     'country': 'GPE',
     'mount': 'LOC',
     'state': 'GPE',
-    'code': None,
+    'code': 'CARDINAL',
     'count': 'CARDINAL',
     'date': 'DATE',
+    'dist': 'QUANTITY',
     'money': 'MONEY',
+    'ord': 'ORDINAL',
+    'other': 'CARDINAL',
+    'period': 'TIME',
     'perc': 'PERCENT',
+    'speed': 'QUANTITY',
+    'temp': 'QUANTITY',
+    'volsize': 'QUANTITY',
     'weight': 'QUANTITY'
 }
 
@@ -115,13 +122,8 @@ class AnswerExtraction:
                     stopwords_list.append(word)
 
             token_lists = [nlp(word)[0] for word in stopwords_list]
-            self.m_sentences_after_separators[self.m_sentences_after_separators.index(sentence)] = token_lists
-
-
-        # Propozitiile sunt lematizate
-        for sentence in self.m_sentences_after_separators:
             lemma_list = []
-            for token in sentence:
+            for token in token_lists:
                 lemma_list.append(self.rootForm(token.text))
             self.m_sentences_after_separators[self.m_sentences_after_separators.index(sentence)] = lemma_list
 
@@ -205,12 +207,6 @@ class AnswerExtraction:
                     dict_of_entities_copy[sentence] = {}
                     for item in key_list:
                         dict_of_entities_copy[sentence][item] = dict_of_entities[sentence][item]
-
-            dict_dependency_entities = {}
-            for sentence in dict_of_entities_copy:
-                dict_dependency_entities[sentence] = {}
-                for word in dict_of_entities_copy[sentence]:
-                    dict_dependency_entities[sentence][word] = 0
 
             dict_dependency_entities = {}
             for sentence in dict_of_entities_copy:
